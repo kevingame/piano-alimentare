@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .stats {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .day {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .day-header {
+            background: #4f46e5;
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .meal {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .meal:last-child {
+            border-bottom: none;
+        }
+        .meal-title {
+            color: #4f46e5;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .calories {
+            background: #e0e7ff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #4f46e5;
+        }
+        .food-list {
+            padding-left: 20px;
+            color: #4b5563;
+        }
+        .food-item {
+            margin: 5px 0;
+        }
+        .notes {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .notes h2 {
+            color: #92400e;
+            margin-top: 0;
+        }
+        .notes ul {
+            color: #92400e;
+        }
+        .training-day {
+            background: #ecfdf5;
+        }
+        .training-day .day-header {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Piano Alimentare Settimanale</h1>
+        <h2>Obiettivo: Incremento Massa Muscolare</h2>
+    </div>
+
+    <div class="stats">
+        <h2>Dettagli Personali</h2>
+        <ul>
+            <li>Età: 21 anni</li>
+            <li>Peso attuale: 62kg</li>
+            <li>Peso obiettivo: 70kg</li>
+            <li>Allenamento: 3 volte/settimana (Lunedì, Mercoledì, Venerdì/Sabato)</li>
+            <li>Target giornaliero: ~3600 kcal (440g carboidrati, 176g proteine, 116g grassi)</li>
+        </ul>
+    </div>
+
+    <div class="day training-day">
+        <div class="day-header">LUNEDÌ (Giorno di Allenamento)</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">80g fiocchi d'avena</li>
+                <li class="food-item">300ml latte intero</li>
+                <li class="food-item">1 banana grande</li>
+                <li class="food-item">30g mandorle</li>
+                <li class="food-item">1 cucchiaino di miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">200g yogurt greco</li>
+                <li class="food-item">30g frutta secca mista</li>
+                <li class="food-item">1 mela</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g pasta</li>
+                <li class="food-item">150g macinato di manzo</li>
+                <li class="food-item">Sugo di pomodoro</li>
+                <li class="food-item">200g broccoli</li>
+                <li class="food-item">2 cucchiai olio d'oliva</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pre-Allenamento <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 banana</li>
+                <li class="food-item">40g crackers</li>
+                <li class="food-item">20g miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250g patate</li>
+                <li class="food-item">200g merluzzo</li>
+                <li class="food-item">250g spinaci</li>
+                <li class="food-item">3 cucchiai olio d'oliva</li>
+                <li class="food-item">50g mozzarella</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte intero</li>
+                <li class="food-item">30g cereali</li>
+                <li class="food-item">20g cioccolato fondente</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day">
+        <div class="day-header">MARTEDÌ (Riposo)</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">4 fette pane</li>
+                <li class="food-item">2 uova</li>
+                <li class="food-item">50g prosciutto cotto</li>
+                <li class="food-item">1 frutto</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 yogurt greco</li>
+                <li class="food-item">2 fette biscottate</li>
+                <li class="food-item">30g marmellata</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">100g riso</li>
+                <li class="food-item">150g tonno</li>
+                <li class="food-item">200g piselli</li>
+                <li class="food-item">2 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pomeridiano <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">30g frutta secca</li>
+                <li class="food-item">1 pera</li>
+                <li class="food-item">2 fette pane</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">300g patate dolci</li>
+                <li class="food-item">180g tacchino</li>
+                <li class="food-item">200g carote</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">40g formaggio</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">40g biscotti</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day training-day">
+        <div class="day-header">MERCOLEDÌ (Giorno di Allenamento)</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">80g pane</li>
+                <li class="food-item">3 uova strapazzate</li>
+                <li class="food-item">30g formaggio</li>
+                <li class="food-item">1 arancia</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 banana</li>
+                <li class="food-item">30g mandorle</li>
+                <li class="food-item">1 yogurt</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g pasta</li>
+                <li class="food-item">150g sgombro</li>
+                <li class="food-item">Pomodorini</li>
+                <li class="food-item">200g zucchine</li>
+                <li class="food-item">3 cucchiai olio</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pre-Allenamento <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">40g gallette di riso</li>
+                <li class="food-item">20g miele</li>
+                <li class="food-item">1 mela</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">300g patate</li>
+                <li class="food-item">200g salmone</li>
+                <li class="food-item">200g fagiolini</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">30g cereali</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day">
+        <div class="day-header">GIOVEDÌ (Riposo)</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">80g fiocchi d'avena</li>
+                <li class="food-item">300ml latte</li>
+                <li class="food-item">1 banana</li>
+                <li class="food-item">20g nocciole</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">200g yogurt</li>
+                <li class="food-item">30g uvetta</li>
+                <li class="food-item">20g mandorle</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g pasta</li>
+                <li class="food-item">150g lenticchie</li>
+                <li class="food-item">200g carote</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+	    </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pomeridiano <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">40g pane</li>
+                <li class="food-item">50g ricotta</li>
+                <li class="food-item">1 frutto</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250g riso</li>
+                <li class="food-item">180g vitello</li>
+                <li class="food-item">200g asparagi</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">40g mozzarella</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">30g biscotti</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day training-day">
+        <div class="day-header">VENERDÌ (Giorno di Allenamento)</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">100g pane</li>
+                <li class="food-item">50g prosciutto crudo</li>
+                <li class="food-item">30g formaggio</li>
+                <li class="food-item">1 frutto</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 yogurt greco</li>
+                <li class="food-item">30g noci</li>
+                <li class="food-item">1 mela</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g gnocchi</li>
+                <li class="food-item">Ragù di carne</li>
+                <li class="food-item">200g spinaci</li>
+                <li class="food-item">2 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pre-Allenamento <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 banana</li>
+                <li class="food-item">30g crackers</li>
+                <li class="food-item">20g miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">300g pasta</li>
+                <li class="food-item">200g merluzzo</li>
+                <li class="food-item">200g broccoli</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">40g formaggio</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">30g cereali</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day">
+        <div class="day-header">SABATO</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">80g pane</li>
+                <li class="food-item">2 uova</li>
+                <li class="food-item">40g formaggio</li>
+                <li class="food-item">1 frutto</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">200g yogurt</li>
+                <li class="food-item">30g cereali</li>
+                <li class="food-item">1 pera</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g riso</li>
+                <li class="food-item">150g polpo</li>
+                <li class="food-item">200g zucchine</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pomeridiano <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">40g pane</li>
+                <li class="food-item">50g hummus</li>
+                <li class="food-item">1 frutto</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">300g patate</li>
+                <li class="food-item">200g coniglio</li>
+                <li class="food-item">200g bietole</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">40g mozzarella</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">30g biscotti</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="day">
+        <div class="day-header">DOMENICA</div>
+        
+        <div class="meal">
+            <div class="meal-title">
+                Colazione <span class="calories">700 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">4 fette pane</li>
+                <li class="food-item">50g prosciutto cotto</li>
+                <li class="food-item">30g formaggio</li>
+                <li class="food-item">1 frutto</li>
+                <li class="food-item">1 cucchiaio miele</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Mattutino <span class="calories">300 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">1 yogurt greco</li>
+                <li class="food-item">30g frutta secca</li>
+                <li class="food-item">1 mela</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Pranzo <span class="calories">800 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">120g pasta</li>
+                <li class="food-item">150g ceci</li>
+                <li class="food-item">200g carote</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">30g parmigiano</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Pomeridiano <span class="calories">250 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">40g crackers</li>
+                <li class="food-item">30g noci</li>
+                <li class="food-item">1 frutto</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Cena <span class="calories">1200 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">300g patate</li>
+                <li class="food-item">200g spigola</li>
+                <li class="food-item">200g fagiolini</li>
+                <li class="food-item">3 cucchiai olio</li>
+                <li class="food-item">40g formaggio</li>
+            </ul>
+        </div>
+
+        <div class="meal">
+            <div class="meal-title">
+                Spuntino Serale <span class="calories">350 kcal</span>
+            </div>
+            <ul class="food-list">
+                <li class="food-item">250ml latte</li>
+                <li class="food-item">30g cereali</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h2>Note Importanti:</h2>
+        <ul>
+            <li>Bere almeno 2-3 litri di acqua al giorno</li>
+            <li>Adattare le porzioni in base alla fame e al progresso</li>
+            <li>Variare i condimenti con erbe aromatiche</li>
+            <li>Consumare verdura e frutta di stagione</li>
+            <li>Gli spuntini possono essere anticipati o posticipati in base agli orari di allenamento</li>
+        </ul>
+
+        <h2>Suggerimenti:</h2>
+        <ul>
+            <li>Preparare più porzioni alla volta per risparmiare tempo</li>
+            <li>Conservare gli alimenti correttamente in frigorifero</li>
+            <li>Fare una lista della spesa settimanale</li>
+            <li>Preferire prodotti di stagione per contenere i costi</li>
+            <li>Variare le fonti proteiche durante la settimana</li>
+        </ul>
+    </div>
+</body>
+</html>
